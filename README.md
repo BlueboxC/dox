@@ -2,43 +2,56 @@
   <img src="./banner.jpg" alt="DOX" width="100%">
 </p>
 
-## How DOX works
+# DOX — BlueboxC adaptation
 
-DOX is a tiny AGENTS.md framework that gives an AI agent precise project context.
+A Markdown-only fork of [agent0ai/dox](https://github.com/agent0ai/dox), based on [765ae4ac](https://github.com/agent0ai/dox/commit/765ae4ac02cc884eefcd41a3d0f71941721adb89).
 
-The agent keeps a hierarchy of AGENTS.md files as the project changes:
+The stable [AGENTS.md](./AGENTS.md) contains the framework and explicit reading rules. Evolving project ownership, workflows and indexes belong to root and child DOX.md files. Our repository's [DOX.md](./DOX.md) describes this fork; it is not the template to copy into another project.
 
-- root AGENTS.md contains project-wide instructions and the top-level index
-- child AGENTS.md files contain local instructions for specific areas
-- before any edit, the agent walks the docs tree from the root to the area it will touch
-- the relevant docs give it exact local guidelines, so it does not edit blindly
-- after meaningful changes, it updates the affected AGENTS.md files
+## What changed
 
-The result is simple: traverse the docs, understand the local rules, make precise edits, keep the docs current. Less guessing. Less drift. Less "why did it touch that file?"
+- Project documentation uses DOX.md instead of a hierarchy of AGENTS.md files.
+- Routine documentation maintenance preserves the generic framework in AGENTS.md.
+- Copyable templates are separate from this repository's own contracts, avoiding the template/index confusion reported in upstream [#6](https://github.com/agent0ai/dox/issues/6) and [#7](https://github.com/agent0ai/dox/issues/7).
+- Independent projects and module responsibilities keep their own contracts.
+- Optional Beads instructions preserve verified solutions and require evidence for new learning.
+- Concise implementation and reuse are explicit preferences.
 
-<p align="center">
-  <a href="https://youtu.be/NVkRkioBXQc">
-    <img src="./video-thumbnail.jpg" alt="Watch: One markdown file just fixed AI coding forever." width="640">
-  </a>
-</p>
+This complements upstream [PR #4](https://github.com/agent0ai/dox/pull/4). Preservation markers are instructions, not file permissions or an enforced security boundary.
 
-## How to use
+## Adopt in a project
 
-1. Copy the contents of [AGENTS.md](./AGENTS.md?plain=1) into your project's AGENTS.md file.
+1. With no existing AGENTS.md, copy [AGENTS.md](./AGENTS.md?plain=1) into the project root. With an existing entry point, merge the marked framework block into it once; preserve existing instructions and tool-managed sections.
+2. With no existing root DOX.md, copy [templates/root-DOX.md](./templates/root-DOX.md?plain=1) to DOX.md. Preserve an existing hierarchy and reconcile its contracts instead of overwriting it.
+3. Ask the agent: "Initialize or reconcile the DOX.md tree for this project. Read AGENTS.md and existing DOX contracts, inspect the source tree, populate the root's purpose, ownership and child index, and create scoped child DOX.md documents only for durable boundaries. Preserve existing instructions, solved modules and verification evidence."
+4. Use [templates/child-DOX.md](./templates/child-DOX.md?plain=1) as the shape for child contracts. Work Guidance reflects actual instructions; Verification lists existing checks and stays empty when there are none.
+5. For an already initialized Beads workspace, optionally append [templates/beads-AGENTS.fragment.md](./templates/beads-AGENTS.fragment.md?plain=1) once, outside generated tool-managed sections.
 
-<br>
-That's it. No installation, no dependencies, no package, no runtime. DOX is just a Markdown instruction for AI agents.
+```text
+AGENTS.md           stable framework and agent entry point
+DOX.md              project-wide contracts and child index
+src/DOX.md          source/domain contracts
+src/api/DOX.md      narrower contracts when warranted
+```
 
-It works with any AI agent that supports AGENTS.md files, including Codex, Claude Code, OpenCode, and similar tools.
+Copying Markdown creates no hooks, runtime, databases or integrations. Beads is a separate optional tool; this fork does not install or initialize it.
 
-No AGENTS.md yet? Copy the file into your project root. The agent will see these instructions and will start building the DOX tree.
+## Read and maintain
 
-For an existing project, you can tell your agent: `Initialize DOX tree for this project now.` It will create all the child AGENTS.md files and indexes.
+Before editing, read the root DOX.md and every applicable parent and local contract. A closer contract controls local details without weakening the framework. After meaningful changes, update the owning contracts and affected indexes, remove stale text and run relevant existing checks.
+
+A rename alone is insufficient: agent clients may not automatically load DOX.md. AGENTS.md explicitly requires the hierarchy to be read. The framework remains in AGENTS.md; this fork does not move all instructions into an automatically ignored file.
+
+Separate files help keep project rules from being merged into unrelated agent/tool instructions. They can limit growth of automatically injected documentation where a client loads AGENTS.md and reads DOX.md on demand. We have not benchmarked token savings, agent adherence or runtime improvements; scoped contracts do not by themselves prevent incorrect code changes.
+
+No installer, model, daemon or package dependency is required. Existing client rules and operating permissions still apply.
+
+## Verification
+
+The prepared source has been checked for relative Markdown links, DOX child indexes, template section order, framework markers and machine-specific paths. The inherited MIT license and image assets remain unchanged. This is document validation, not a measured agent-behavior or token-efficiency test.
 
 ## Credits
 
-<p align="center">
-  Created by <strong><a href="https://www.agent-zero.ai/">Agent Zero</a></strong><br>
-  Open-source agentic AI framework<br>
-  <a href="https://www.agent-zero.ai/">Website</a> · <a href="https://github.com/agent0ai/agent-zero">GitHub repository</a>
-</p>
+DOX was created by [Agent Zero](https://www.agent-zero.ai/). See the [original repository](https://github.com/agent0ai/dox), [Agent Zero project](https://github.com/agent0ai/agent-zero) and [MIT license](./LICENSE). The original [demo video](https://youtu.be/NVkRkioBXQc) explains the upstream AGENTS.md hierarchy.
+
+BlueboxC maintains this DOX.md adaptation.
