@@ -2,7 +2,7 @@
   <img src="./banner.jpg" alt="DOX" width="100%">
 </p>
 
-# DOX — BlueboxC adaptation
+# DOX Scope
 
 A Markdown-only fork of [agent0ai/dox](https://github.com/agent0ai/dox), based on [765ae4ac](https://github.com/agent0ai/dox/commit/765ae4ac02cc884eefcd41a3d0f71941721adb89).
 
@@ -54,4 +54,4 @@ The prepared source has been checked for relative Markdown links, DOX child inde
 
 DOX was created by [Agent Zero](https://www.agent-zero.ai/). See the [original repository](https://github.com/agent0ai/dox), [Agent Zero project](https://github.com/agent0ai/agent-zero) and [MIT license](./LICENSE). The original [demo video](https://youtu.be/NVkRkioBXQc) explains the upstream AGENTS.md hierarchy.
 
-BlueboxC maintains this DOX.md adaptation.
+BlueboxC maintains DOX Scope, this DOX.md adaptation.

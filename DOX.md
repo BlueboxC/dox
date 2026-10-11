@@ -1,4 +1,4 @@
-# DOX.md — BlueboxC DOX fork
+# DOX.md — DOX Scope
 
 ## Purpose
 
